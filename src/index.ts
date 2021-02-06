@@ -6,6 +6,9 @@ import {Parser} from 'json2csv';
 import * as ftp from "basic-ftp";
 import {Readable} from "stream";
 
+/**
+ * Integration main type
+ */
 type CovidCases = {
     stateName: string;
     confirmed: number;
@@ -14,6 +17,13 @@ type CovidCases = {
     updated: string
 };
 
+/**
+ * This is our entry point for start automation executing.
+ * You can personalize the success and error messages according your needs
+ * It is mandatory execute the AutomationExecution.executeAutomation method
+ * 
+ * @param event 
+ */
 export const handler = async (event: any): Promise<ProxyResult> => {
     const execution = new Integration(event);
     await AutomationExecution.executeAutomation(execution);
@@ -27,17 +37,30 @@ export const handler = async (event: any): Promise<ProxyResult> => {
     };
 }
 
-
+/**
+ * This is our main class that will be responsible to process our automation
+ * Basically, you only need to implement the abstract methods and write your business logic
+ * 
+ * We provide importante instructions for all methods
+ */
 class Integration extends NoDeltaBatchIntegrationFlow {
     private systems: any[];
 
+    /**
+     * It is mandatory have the constructor and call the super with event of main handler
+     * You can get the systems configured in automation and save in class property for further use
+     * @param event 
+     */
     constructor(event: any) {
         super(event);
         this.systems = event.systems ?? [];
     }
 
-    /**
-     * Return the columns visible in monitoring
+    /**    
+     * Return all columns that will be visible in monitoring screen.
+     * The components order is the display orden in monitoring table
+     * 
+     * The implementation of this method is mandatory
      */
     defineMetadata(): Metadata[] {
         return [
@@ -72,6 +95,12 @@ class Integration extends NoDeltaBatchIntegrationFlow {
     /**
      * Return the source system data as a plain array of objets
      * 
+     * This is the method where you will extract your source data
+     * If your automation is a webhook, the payload sent by caller will be avaiable
+     * in "payload" parameter.
+     * 
+     * The implementation of this method is mandatory
+     * 
      * @param payload 
      */
     async loadSourceSystemData(payload?: any): Promise<CovidCases[]> {
@@ -102,6 +131,8 @@ class Integration extends NoDeltaBatchIntegrationFlow {
     /**
      * This routine will be responsible to process your extracted items.
      * Here is up to you, do your magic :)
+     * 
+     * The implementation of this method is mandatory
      * 
      * @param items 
      */
