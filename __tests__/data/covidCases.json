@@ -1,0 +1,233 @@
+{
+    "All": {
+        "confirmed": 9447165,
+        "recovered": 8396148,
+        "deaths": 230034,
+        "country": "Brazil",
+        "population": 209288278,
+        "sq_km_area": 8547403,
+        "life_expectancy": "62.9",
+        "elevation_in_meters": 320,
+        "continent": "South America",
+        "abbreviation": "BR",
+        "location": "South America",
+        "iso": 76,
+        "capital_city": "Brasília"
+    },
+    "Acre": {
+        "lat": "-9.0238",
+        "long": "-70.812",
+        "confirmed": 50122,
+        "recovered": 44202,
+        "deaths": 884,
+        "updated": "2021/02/06 15:22:07+00"
+    },
+    "Alagoas": {
+        "lat": "-9.5713",
+        "long": "-36.782",
+        "confirmed": 120028,
+        "recovered": 114837,
+        "deaths": 2788,
+        "updated": "2021/02/06 15:22:07+00"
+    },
+    "Amapa": {
+        "lat": "0.902",
+        "long": "-52.003",
+        "confirmed": 78423,
+        "recovered": 58615,
+        "deaths": 1074,
+        "updated": "2021/02/06 15:22:07+00"
+    },
+    "Amazonas": {
+        "lat": "-3.4168",
+        "long": "-65.8561",
+        "confirmed": 278789,
+        "recovered": 232091,
+        "deaths": 8815,
+        "updated": "2021/02/06 15:22:07+00"
+    },
+    "Bahia": {
+        "lat": "-12.5797",
+        "long": "-41.7007",
+        "confirmed": 602792,
+        "recovered": 579215,
+        "deaths": 10294,
+        "updated": "2021/02/06 15:22:07+00"
+    },
+    "Ceara": {
+        "lat": "-5.4984",
+        "long": "-39.3206",
+        "confirmed": 380710,
+        "recovered": 288011,
+        "deaths": 10585,
+        "updated": "2021/02/06 15:22:07+00"
+    },
+    "Distrito Federal": {
+        "lat": "-15.7998",
+        "long": "-47.8645",
+        "confirmed": 280026,
+        "recovered": 270060,
+        "deaths": 4600,
+        "updated": "2021/02/06 15:22:07+00"
+    },
+    "Espirito Santo": {
+        "lat": "-19.1834",
+        "long": "-40.3089",
+        "confirmed": 300624,
+        "recovered": 283076,
+        "deaths": 5975,
+        "updated": "2021/02/06 15:22:07+00"
+    },
+    "Goias": {
+        "lat": "-15.827",
+        "long": "-49.8362",
+        "confirmed": 359096,
+        "recovered": 344651,
+        "deaths": 7672,
+        "updated": "2021/02/06 15:22:07+00"
+    },
+    "Maranhao": {
+        "lat": "-4.9609",
+        "long": "-45.2744",
+        "confirmed": 209331,
+        "recovered": 196784,
+        "deaths": 4754,
+        "updated": "2021/02/06 15:22:07+00"
+    },
+    "Mato Grosso": {
+        "lat": "-12.6819",
+        "long": "-56.9211",
+        "confirmed": 222942,
+        "recovered": 208482,
+        "deaths": 5177,
+        "updated": "2021/02/06 15:22:07+00"
+    },
+    "Mato Grosso do Sul": {
+        "lat": "-20.7722",
+        "long": "-54.7852",
+        "confirmed": 164314,
+        "recovered": 153604,
+        "deaths": 2983,
+        "updated": "2021/02/06 15:22:07+00"
+    },
+    "Minas Gerais": {
+        "lat": "-18.5122",
+        "long": "-44.555",
+        "confirmed": 762412,
+        "recovered": 685701,
+        "deaths": 15667,
+        "updated": "2021/02/06 15:22:07+00"
+    },
+    "Para": {
+        "lat": "-1.9981",
+        "long": "-54.9306",
+        "confirmed": 336453,
+        "recovered": 315277,
+        "deaths": 7717,
+        "updated": "2021/02/06 15:22:07+00"
+    },
+    "Paraiba": {
+        "lat": "-7.24",
+        "long": "-36.782",
+        "confirmed": 195482,
+        "recovered": 149792,
+        "deaths": 4123,
+        "updated": "2021/02/06 15:22:07+00"
+    },
+    "Parana": {
+        "lat": "-25.2521",
+        "long": "-52.0215",
+        "confirmed": 564903,
+        "recovered": 416060,
+        "deaths": 10317,
+        "updated": "2021/02/06 15:22:07+00"
+    },
+    "Pernambuco": {
+        "lat": "-8.8137",
+        "long": "-36.9541",
+        "confirmed": 268486,
+        "recovered": 226973,
+        "deaths": 10452,
+        "updated": "2021/02/06 15:22:07+00"
+    },
+    "Piaui": {
+        "lat": "-7.7183",
+        "long": "-42.7289",
+        "confirmed": 161336,
+        "recovered": 157757,
+        "deaths": 3112,
+        "updated": "2021/02/06 15:22:07+00"
+    },
+    "Rio Grande do Norte": {
+        "lat": "-5.4026",
+        "long": "-36.9541",
+        "confirmed": 142465,
+        "recovered": 98586,
+        "deaths": 3320,
+        "updated": "2021/02/06 15:22:07+00"
+    },
+    "Rio Grande do Sul": {
+        "lat": "-30.0346",
+        "long": "-51.2177",
+        "confirmed": 560540,
+        "recovered": 537320,
+        "deaths": 10929,
+        "updated": "2021/02/06 15:22:07+00"
+    },
+    "Rio de Janeiro": {
+        "lat": "-22.9068",
+        "long": "-43.1729",
+        "confirmed": 535134,
+        "recovered": 499782,
+        "deaths": 30545,
+        "updated": "2021/02/06 15:22:07+00"
+    },
+    "Rondonia": {
+        "lat": "-11.5057",
+        "long": "-63.5806",
+        "confirmed": 129902,
+        "recovered": 108793,
+        "deaths": 2326,
+        "updated": "2021/02/06 15:22:07+00"
+    },
+    "Roraima": {
+        "lat": "-2.7376",
+        "long": "-62.0751",
+        "confirmed": 75288,
+        "recovered": 69826,
+        "deaths": 886,
+        "updated": "2021/02/06 15:22:07+00"
+    },
+    "Santa Catarina": {
+        "lat": "-27.2423",
+        "long": "-50.2189",
+        "confirmed": 590449,
+        "recovered": 567005,
+        "deaths": 6490,
+        "updated": "2021/02/06 15:22:07+00"
+    },
+    "Sao Paulo": {
+        "lat": "-23.5505",
+        "long": "-46.6333",
+        "confirmed": 1833163,
+        "recovered": 1573945,
+        "deaths": 54324,
+        "updated": "2021/02/06 15:22:07+00"
+    },
+    "Sergipe": {
+        "lat": "-10.5741",
+        "long": "-37.3857",
+        "confirmed": 140005,
+        "recovered": 123868,
+        "deaths": 2818,
+        "updated": "2021/02/06 15:22:07+00"
+    },
+    "Tocantins": {
+        "lat": "-10.1753",
+        "long": "-48.2982",
+        "confirmed": 103950,
+        "recovered": 91835,
+        "deaths": 1407,
+        "updated": "2021/02/06 15:22:07+00"
+    }
+}

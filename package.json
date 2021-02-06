@@ -1,0 +1,44 @@
+{
+  "name": "th-nodelta-batch-template",
+  "version": "1.0.0",
+  "description": "Template for automations - No Delta Batch flow",
+  "main": "src/index.ts",
+  "scripts": {
+    "compile": "tsc",
+    "build": "tsc && webpack && zip -j dist/artifact.zip tunnelhub.yml build/*",
+    "test": "jest"
+  },
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@babel/core": "^7.12.13",
+    "@babel/preset-env": "^7.12.13",
+    "@babel/preset-typescript": "^7.12.13",
+    "@types/aws-lambda": "^8.10.71",
+    "@types/jest": "^26.0.20",
+    "@types/json2csv": "^5.0.1",
+    "@types/mysql": "^2.15.17",
+    "@types/node": "^14.14.25",
+    "babel-loader": "^8.2.2",
+    "cache-loader": "^4.1.0",
+    "fork-ts-checker-webpack-plugin": "^6.1.0",
+    "jest": "^26.6.3",
+    "test": "^0.6.0",
+    "ts-jest": "^26.5.0",
+    "ts-loader": "^8.0.15",
+    "typescript": "^3.9.7",
+    "webpack": "^5.21.1",
+    "webpack-cli": "^4.5.0"
+  },
+  "dependencies": {
+    "@4success/tunnelhub-sdk": "^1.0.38",
+    "aws-sdk-mock": "^5.1.0",
+    "aws-xray-sdk-core": "^3.2.0",
+    "axios": "^0.21.1",
+    "babel-preset-env": "^1.7.0",
+    "basic-ftp": "^4.6.3",
+    "form-data": "^3.0.0",
+    "got": "^11.8.1",
+    "json2csv": "^5.0.6",
+    "mysql": "^2.18.1"
+  }
+}

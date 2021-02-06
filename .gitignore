@@ -1,0 +1,8 @@
+.idea
+
+.aws-sam
+.webpackCache/
+
+dist
+build
+node_modules
