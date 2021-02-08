@@ -24,13 +24,13 @@
     "jest": "^26.6.3",
     "test": "^0.6.0",
     "ts-jest": "^26.5.0",
-    "ts-loader": "^8.0.15",
+    "ts-loader": "^8.0.16",
     "typescript": "^3.9.7",
-    "webpack": "^5.21.1",
+    "webpack": "^5.21.2",
     "webpack-cli": "^4.5.0"
   },
   "dependencies": {
-    "@4success/tunnelhub-sdk": "^1.0.38",
+    "@4success/tunnelhub-sdk": "^1.0.45",
     "aws-sdk-mock": "^5.1.0",
     "aws-xray-sdk-core": "^3.2.0",
     "axios": "^0.21.1",
