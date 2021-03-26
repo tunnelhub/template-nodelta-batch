@@ -5,7 +5,7 @@
   "main": "src/index.ts",
   "scripts": {
     "compile": "tsc",
-    "build": "tsc && webpack && zip -j dist/artifact.zip tunnelhub.yml build/*",
+    "build": "tsc && webpack && zip -j dist/artifact.zip build/*",
     "test": "jest"
   },
   "license": "UNLICENSED",
