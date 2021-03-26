@@ -36,6 +36,7 @@
     "axios": "^0.21.1",
     "babel-preset-env": "^1.7.0",
     "basic-ftp": "^4.6.3",
+    "copy-webpack-plugin": "^8.1.0",
     "form-data": "^3.0.0",
     "got": "^11.8.1",
     "json2csv": "^5.0.6",

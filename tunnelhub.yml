@@ -11,3 +11,11 @@ configuration:
   runtime: nodejs12.x
   memorySize: 256
   timeout: 60
+#
+# Use this if is required run on VPC
+#
+# vpcConfig:
+#   subnetIds:
+#     - subnet-xxxxxxxxxxxxxxxxx
+#   securityGroupIds:
+#     - sg-xxxxxxxxxxxxxxxxx
