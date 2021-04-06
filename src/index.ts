@@ -1,4 +1,4 @@
-import { AutomationExecution, IntegrationMessageReturn, Metadata } from '@4success/tunnelhub-sdk';
+import { AutomationExecution, IntegrationMessageReturnBatch, Metadata } from '@4success/tunnelhub-sdk';
 import { NoDeltaBatchIntegrationFlow } from '@4success/tunnelhub-sdk/src/classes/flows/noDeltaBatchIntegrationFlow';
 import { ProxyResult } from 'aws-lambda';
 import got from 'got';
@@ -138,7 +138,7 @@ class Integration extends NoDeltaBatchIntegrationFlow {
    *
    * @param items
    */
-  async sendDataInBatch(items: CovidCases[]): Promise<IntegrationMessageReturn> {
+  async sendDataInBatch(items: CovidCases[]): Promise<IntegrationMessageReturnBatch[]> {
     /**
      * You can get credentials form associated systems with:
      * const system = this.systems.find(value => value.internalName === 'INTERNAL_SYSTEM_NAME');
@@ -161,9 +161,15 @@ class Integration extends NoDeltaBatchIntegrationFlow {
     await client.uploadFrom(readable, `/destinationFolder/covidcases/${Math.floor(Date.now() / 1000)}/extractedData.csv`);
     client.close();
 
-    return {
-      data: {},
-      message: 'Success',
-    };
+    const responseArray: IntegrationMessageReturnBatch[] = [];
+
+    items.forEach(() => {
+      responseArray.push({
+        status: 'SUCCESS',
+        data: {},
+        message: 'Success',
+      });
+    });
+    return responseArray;
   }
 }
