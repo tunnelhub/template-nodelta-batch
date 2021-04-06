@@ -33,7 +33,7 @@ module.exports = {
         new CopyPlugin({
             patterns: [
                 { from: "tunnelhub.yml", to: "tunnelhub.yml" },
-                { from: "Dockerfile", to: "." },
+                { from: "Dockerfile", to: ".", noErrorOnMissing: true },
             ],
         }),
     ]
