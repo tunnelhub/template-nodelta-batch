@@ -22,6 +22,10 @@ beforeAll(() => {
   const updateExecutionStatisticsFunc = jest.spyOn(NoDeltaBatchIntegrationFlow.prototype as any, 'updateExecutionStatistics');
   updateExecutionStatisticsFunc.mockImplementation(() => {
   });
+
+  const updateMetadata = jest.spyOn(NoDeltaBatchIntegrationFlow.prototype as any, 'updateMetadata');
+  updateMetadata.mockImplementation(() => {
+  });
 });
 
 
@@ -53,7 +57,7 @@ test('testMyIntegration', async () => {
   /**
    * Calling my function
    */
-  const response = await main.handler({});
+  const response = await main.handler({}, {});
 
   expect(response.statusCode).toEqual(200);
   expect(typeof response.body).toBe('string');
