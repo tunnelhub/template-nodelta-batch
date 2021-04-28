@@ -3,6 +3,8 @@ import * as main from '../src';
 import * as ftp from 'basic-ftp';
 import { NoDeltaBatchIntegrationFlow } from '@4success/tunnelhub-sdk/src/classes/flows/noDeltaBatchIntegrationFlow';
 import got from 'got';
+import { AutomationExecution } from '@4success/tunnelhub-sdk';
+import AutomationLog from '@4success/tunnelhub-sdk/src/classes/logs/automationLog';
 
 jest.mock('basic-ftp');
 jest.mock('got');
@@ -15,9 +17,14 @@ beforeAll(() => {
    * The code bellow is ** mandatory ** to avoid TunnelHub SDK make external calls trying persist logs
    * You can make this mock using the same code with any IntegrationFlow at @4success/tunnelhub-sdk/classes/flows
    */
-  const persistLogsFunc = jest.spyOn(NoDeltaBatchIntegrationFlow.prototype as any, 'persistLogs');
+  const persistLambdaContextFunc = jest.spyOn(AutomationExecution as any, 'persistLambdaContext');
+  persistLambdaContextFunc.mockImplementation(() => {
+  });
+
+  const persistLogsFunc = jest.spyOn(AutomationLog.prototype as any, 'save');
   persistLogsFunc.mockImplementation(() => {
   });
+
 
   const updateExecutionStatisticsFunc = jest.spyOn(NoDeltaBatchIntegrationFlow.prototype as any, 'updateExecutionStatistics');
   updateExecutionStatisticsFunc.mockImplementation(() => {
