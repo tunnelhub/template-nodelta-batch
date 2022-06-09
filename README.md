@@ -6,8 +6,8 @@ This is a basic template for automations of type "No Delta Batch". Use it as a s
 The "No Delta Batch" integration flow basically extract data from one or more sources, and process all items at once. It is designed for maximum flexibility but have a behavior of 'all or nothing'.
 
 ### Default configuration:
-* Environment: nodejs12.x
-* Memory: 512mb
+* Environment: nodejs14.x
+* Memory: 128mb
 * Timeout: 60s
 
 You can personalize this settings in tunnelhub.yml file

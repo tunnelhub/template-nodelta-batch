@@ -2,15 +2,17 @@
 # yarn lockfile v1
 
 
-"@4success/tunnelhub-sdk@^1.0.45":
-  version "1.0.85"
-  resolved "https://registry.yarnpkg.com/@4success/tunnelhub-sdk/-/tunnelhub-sdk-1.0.85.tgz#15b8d8d95434690ad82354484f18e9cc8c7d301b"
-  integrity sha512-H1W2N5fZHmshxBTuwxW77+gQ9keHaQXJUG5ptlmVyY7JEEhOG5ShJ1svV1wyFilp6TBdEbcnwGKfPw0RtN9Qkg==
+"@4success/tunnelhub-sdk@^1.0.112":
+  version "1.0.112"
+  resolved "https://registry.yarnpkg.com/@4success/tunnelhub-sdk/-/tunnelhub-sdk-1.0.112.tgz#3c427b30e7d65bcf0498843fa703f57ff1b49426"
+  integrity sha512-hMT3Yy2vw/TaDdAwHiqoUDgVmDe+wet861KIyz6KYQcplu66er2yVC4WlsRhwaP9UPXIID3Yj2QRTLjZ3Ogh/g==
   dependencies:
+    "@middy/core" "^2.5.1"
     aws-sdk "^2.822.0"
     aws-xray-sdk-core "^3.2.0"
     bluebird "^3.7.2"
     got "^11.8.2"
+    lz-string "^1.4.4"
     uuid "^8.3.2"
 
 "@babel/code-frame@^7.0.0", "@babel/code-frame@^7.12.13", "@babel/code-frame@^7.8.3":
@@ -1084,6 +1086,11 @@
     "@types/node" "*"
     "@types/yargs" "^15.0.0"
     chalk "^4.0.0"
+
+"@middy/core@^2.5.1":
+  version "2.5.7"
+  resolved "https://registry.yarnpkg.com/@middy/core/-/core-2.5.7.tgz#a1b3eff68881ff66b14b5051255791f7cbd3b471"
+  integrity sha512-KX5Ud0SP+pol6PGkYtMCH4goHobs1XJo3OvEUwdiZUIjZgo56Q08nLu5N7Bs6P+FwGTQHA+hlQ3I5SZbfpO/jg==
 
 "@nodelib/fs.scandir@2.1.4":
   version "2.1.4"
@@ -4562,6 +4569,11 @@ lru-cache@^6.0.0:
   dependencies:
     yallist "^4.0.0"
 
+lz-string@^1.4.4:
+  version "1.4.4"
+  resolved "https://registry.yarnpkg.com/lz-string/-/lz-string-1.4.4.tgz#c0d8eaf36059f705796e1e344811cf4c498d3a26"
+  integrity sha512-0ckx7ZHRPqb0oUm8zNr+90mtf9DQB60H1wMCjBtfi62Kl3a7JbHob6gA2bC+xRvZoOL+1hzUK8jeuEIQE8svEQ==
+
 make-dir@^3.0.0, make-dir@^3.0.2, make-dir@^3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/make-dir/-/make-dir-3.1.0.tgz#415e967046b3a7f1d185277d84aa58203726a13f"
@@ -6055,10 +6067,10 @@ typedarray-to-buffer@^3.1.5:
   dependencies:
     is-typedarray "^1.0.0"
 
-typescript@^3.9.7:
-  version "3.9.9"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.9.9.tgz#e69905c54bc0681d0518bd4d587cc6f2d0b1a674"
-  integrity sha512-kdMjTiekY+z/ubJCATUPlRDl39vXYiMV9iyeMuEuXZh2we6zz80uovNN2WlAxmmdE/Z/YQe+EbOEXB5RHEED3w==
+typescript@^4.0.0:
+  version "4.7.3"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.7.3.tgz#8364b502d5257b540f9de4c40be84c98e23a129d"
+  integrity sha512-WOkT3XYvrpXx4vMMqlD+8R8R37fZkjyLGlxavMc4iB8lrl8L0DeTcHbYgw/v0N/z9wAFsgBhcsF0ruoySS22mA==
 
 unicode-canonical-property-names-ecmascript@^1.0.4:
   version "1.0.4"
