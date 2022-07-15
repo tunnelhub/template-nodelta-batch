@@ -1,155 +1,89 @@
 import { NoDeltaBatchIntegrationFlow } from '@4success/tunnelhub-sdk/src/classes/flows/noDeltaBatchIntegrationFlow';
-import { IntegrationMessageReturnBatch, Metadata } from '@4success/tunnelhub-sdk';
-import got from 'got';
-import { Parser } from 'json2csv';
-import * as ftp from 'basic-ftp';
-import { Readable } from 'stream';
+import { GenericParameter, IntegrationMessageReturnBatch, Metadata } from '@4success/tunnelhub-sdk';
+import { TunnelHubSystem } from '@4success/tunnelhub-sdk/src/types/data';
+import { IntegrationModel } from '../data';
 
-/**
- * Integration main type
- */
-type CovidCases = {
-  stateName: string;
-  confirmed: number;
-  recovered: number;
-  deaths: number;
-  updated: string
-};
-
-/**
- * This is our main class that will be responsible to process our automation
- * Basically, you only need to implement the abstract methods and write your business logic
- *
- * We provide important instructions for all methods
- */
 export default class Integration extends NoDeltaBatchIntegrationFlow {
-  private readonly systems: any[];
+  private readonly parameters: { custom: GenericParameter[] };
+  private readonly systems: TunnelHubSystem[];
 
-  /**
-   * It is mandatory have the constructor and call the super with event of main handler
-   * You can get the systems configured in automation and save in class property for further use
-   * @param event
-   * @param context
-   */
   constructor(event: any, context: any) {
     super(event, context);
     this.systems = event.systems ?? [];
+    this.parameters = event.parameters ?? {};
+    /**
+     * It is mandatory to have the constructor call the super with the event of the main handler.
+     * You can get the systems configured in automation and save them in a class attribute for further use.
+     */
   }
 
-  /**
-   * Return all columns that will be visible in monitoring screen.
-   * The components order is the display order in monitoring table
-   *
-   * The implementation of this method is mandatory
-   */
+  /* istanbul ignore next */
   defineMetadata(): Metadata[] {
+    /**
+     * Return all columns that will be visible on the monitoring screen.
+     * The components order is the display order in the monitoring table.
+     *
+     * The implementation of this method is mandatory
+     */
     return [
       {
-        fieldName: 'stateName',
-        fieldLabel: 'State name',
+        fieldName: 'key_field',
+        fieldLabel: 'Key field',
         fieldType: 'TEXT',
       },
       {
-        fieldName: 'confirmed',
-        fieldLabel: 'Confirmed cases',
-        fieldType: 'NUMBER',
-      },
-      {
-        fieldName: 'recovered',
-        fieldLabel: 'Recovered cases',
-        fieldType: 'NUMBER',
-      },
-      {
-        fieldName: 'deaths',
-        fieldLabel: 'Deaths',
-        fieldType: 'NUMBER',
-      },
-      {
-        fieldName: 'updated',
-        fieldLabel: 'Last updated at',
-        fieldType: 'DATETIME',
+        fieldName: 'regular_field',
+        fieldLabel: 'Regular field',
+        fieldType: 'TEXT',
       },
     ];
   }
 
-  /**
-   * Return the source system data as a plain array of objets
-   *
-   * This is the method where you will extract your source data
-   * If your automation is a webhook, the payload sent by caller will be avaiable
-   * in "payload" parameter.
-   *
-   * The implementation of this method is mandatory
-   *
-   * @param payload
-   */
-  async loadSourceSystemData(payload?: any): Promise<CovidCases[]> {
+  async loadSourceSystemData(payload?: any): Promise<IntegrationModel[]> {
     /**
-     * You can get credentials form associated systems with:
-     * const system = this.systems.find(value => value.internalName === 'INTERNAL_SYSTEM_NAME');
+     * Return the source system data as a plain array of objects
+     *
+     * This is the method where you will extract your source data
+     * If your automation is a webhook, the payload sent will be available in the "payload" parameter.
+     *
+     * The implementation of this method is mandatory
      */
-    const sourceSystemData: CovidCases[] = [];
-    const gotResponse = await got(`https://covid-api.mmediagroup.fr/v1/cases?ab=BR`);
+    return [
+      {
+        key_field: '1',
+        regular_field: 'anyString',
+      },
+      {
+        key_field: '2',
+        regular_field: 'anotherString',
+      },
+    ];
+  }
 
-    const covidCases = JSON.parse(gotResponse.body);
-    for (const state in covidCases) {
-      if (state === 'All') {
-        continue;
-      }
-      if (covidCases.hasOwnProperty(state)) {
-        sourceSystemData.push({
-          stateName: state,
-          confirmed: covidCases[state].confirmed,
-          recovered: covidCases[state].recovered,
-          deaths: covidCases[state].deaths,
-          updated: covidCases[state].updated,
+  async sendDataInBatch(items: IntegrationModel[]): Promise<IntegrationMessageReturnBatch[]> {
+    const responseArray: IntegrationMessageReturnBatch[] = [];
+    for (let i = 0; i < items.length; i++) {
+      const item = items[i];
+      /**
+       * This routine will be responsible to process your extracted items.
+       * Here is up to you, do your magic :)
+       *
+       * The implementation of this method is mandatory
+       */
+      try {
+        responseArray.push({
+          status: 'SUCCESS',
+          data: {},
+          message: 'Send successfully',
+        });
+      } catch (e) {
+        responseArray.push({
+          status: 'FAIL',
+          data: {},
+          message: e.message,
         });
       }
     }
-
-    return sourceSystemData;
-  }
-
-  /**
-   * This routine will be responsible to process your extracted items.
-   * Here is up to you, do your magic :)
-   *
-   * The implementation of this method is mandatory
-   *
-   * @param items
-   */
-  async sendDataInBatch(items: CovidCases[]): Promise<IntegrationMessageReturnBatch[]> {
-    /**
-     * You can get credentials form associated systems with:
-     * const system = this.systems.find(value => value.internalName === 'INTERNAL_SYSTEM_NAME');
-     */
-    const props = Object.keys(items[0]);
-    const opts = { fields: props };
-
-    const parser = new Parser(opts);
-
-    const client = new ftp.Client();
-    await client.access({
-      host: 'your.ftp.host.com',
-      port: 21,
-      user: 'yourUser',
-      password: 'yourPassword',
-      secure: false,
-    });
-
-    const readable = Readable.from([parser.parse(items)]);
-    await client.uploadFrom(readable, `/destinationFolder/covidcases/${Math.floor(Date.now() / 1000)}/extractedData.csv`);
-    client.close();
-
-    const responseArray: IntegrationMessageReturnBatch[] = [];
-
-    items.forEach(() => {
-      responseArray.push({
-        status: 'SUCCESS',
-        data: {},
-        message: 'Success',
-      });
-    });
     return responseArray;
   }
 }

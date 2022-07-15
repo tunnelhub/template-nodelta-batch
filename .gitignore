@@ -6,3 +6,6 @@
 dist
 build
 node_modules
+
+/coverage/*
+!/coverage/badge.svg
