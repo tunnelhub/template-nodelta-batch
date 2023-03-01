@@ -1,9 +1,9 @@
 import { handler } from '../src';
 import Integration from '../src/classes/integration';
-import * as thSdk from '@4success/tunnelhub-sdk';
+import * as thSdk from '@tunnelhub/sdk';
 
 jest.mock('../src/classes/integration');
-jest.mock('@4success/tunnelhub-sdk');
+jest.mock('@tunnelhub/sdk');
 
 const mockedSdk = jest.mocked(thSdk, true);
 
