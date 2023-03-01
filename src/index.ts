@@ -1,4 +1,4 @@
-import { AutomationExecution } from '@4success/tunnelhub-sdk';
+import { AutomationExecution } from '@tunnelhub/sdk';
 import { ProxyResult } from 'aws-lambda';
 import Integration from './classes/integration';
 

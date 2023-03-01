@@ -2,19 +2,6 @@
 # yarn lockfile v1
 
 
-"@4success/tunnelhub-sdk@^1.0.112":
-  version "1.0.112"
-  resolved "https://registry.yarnpkg.com/@4success/tunnelhub-sdk/-/tunnelhub-sdk-1.0.112.tgz#3c427b30e7d65bcf0498843fa703f57ff1b49426"
-  integrity sha512-hMT3Yy2vw/TaDdAwHiqoUDgVmDe+wet861KIyz6KYQcplu66er2yVC4WlsRhwaP9UPXIID3Yj2QRTLjZ3Ogh/g==
-  dependencies:
-    "@middy/core" "^2.5.1"
-    aws-sdk "^2.822.0"
-    aws-xray-sdk-core "^3.2.0"
-    bluebird "^3.7.2"
-    got "^11.8.2"
-    lz-string "^1.4.4"
-    uuid "^8.3.2"
-
 "@ampproject/remapping@^2.1.0":
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/@ampproject/remapping/-/remapping-2.2.0.tgz#56c133824780de3174aed5ab6834f3026790154d"
@@ -769,6 +756,19 @@
   integrity sha512-PyRA9sm1Yayuj5OIoJ1hGt2YISX45w9WcFbh6ddT0Z/0yaFxOtGLInr4jUfU1EAFVs0Yfyfev4RNwBlUaHdlDQ==
   dependencies:
     defer-to-connect "^2.0.0"
+
+"@tunnelhub/sdk@^1.0.115":
+  version "1.0.115"
+  resolved "https://registry.yarnpkg.com/@tunnelhub/sdk/-/sdk-1.0.115.tgz#b69e737428ba7af6ef535149a381358b6869e5ea"
+  integrity sha512-3cDdo8L4SIvqNcPe3dQ8nH1Mak1lxAypYUsOpqR+k9fzGsFn/Ph8C72BtoTCRN08TSqw9AoDmv6oY3LdOKP0Rg==
+  dependencies:
+    "@middy/core" "^2.5.1"
+    aws-sdk "^2.822.0"
+    aws-xray-sdk-core "^3.2.0"
+    bluebird "^3.7.2"
+    got "^11.8.2"
+    lz-string "^1.4.4"
+    uuid "^8.3.2"
 
 "@tybys/cross-zip@^3.1.0":
   version "3.1.0"
