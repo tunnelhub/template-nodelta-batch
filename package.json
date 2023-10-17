@@ -1,6 +1,6 @@
 {
   "name": "th-nodelta-batch-template",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Template for automations - No Delta Batch flow",
   "license": "UNLICENSED",
   "main": "src/index.ts",
