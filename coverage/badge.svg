@@ -1,4 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="116" height="20" role="img" aria-label="Coverage: 95.65%">
+<svg xmlns="http://www.w3.org/2000/svg" width="116" height="20" role="img"
+     aria-label="Coverage: 95.65%">
     <title>Coverage: 95.65%</title>
     <linearGradient id="s" x2="0" y2="100%">
         <stop offset="0" stop-color="#bbb" stop-opacity=".1"/>

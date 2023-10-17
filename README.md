@@ -11,8 +11,8 @@ is designed for maximum flexibility but has an "all or nothing" behavior.
 
 ### Default configuration:
 
-* Environment: nodejs14.x
-* Memory: 128mb
+* Environment: nodejs18.x
+* Memory: 256mb
 * Timeout: 60s
 
 You can personalize this settings in tunnelhub.yml file

@@ -1,11 +1,10 @@
 /** @type {import('@jest/types').Config.InitialOptions} */
 const config = {
   testEnvironment: 'node',
-  transform: {
-    '^.+\\.(t|j)sx?$': '@swc/jest',
-  },
+  preset: 'ts-jest',
   modulePathIgnorePatterns: [
     '<rootDir>/dist/',
+    '<rootDir>/build/',
   ],
   testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$',
   moduleFileExtensions: [
