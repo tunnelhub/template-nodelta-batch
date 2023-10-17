@@ -4,6 +4,9 @@
   "description": "Template for automations - No Delta Batch flow",
   "license": "UNLICENSED",
   "main": "src/index.ts",
+  "engines": {
+    "node": ">=18"
+  },
   "scripts": {
     "test": "jest",
     "test:coverage": "jest --collect-coverage --silent",
