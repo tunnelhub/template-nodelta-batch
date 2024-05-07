@@ -2,6 +2,7 @@ import { NoDeltaBatchIntegrationFlow } from '@tunnelhub/sdk/src/classes/flows/no
 import { GenericParameter, IntegrationMessageReturnBatch, Metadata } from '@tunnelhub/sdk';
 import { TunnelHubSystem } from '@tunnelhub/sdk/src/types/data';
 import { IntegrationModel } from '../data';
+import metadata from '../metadata';
 
 export default class Integration extends NoDeltaBatchIntegrationFlow {
   private readonly parameters: { custom: GenericParameter[] };
@@ -25,18 +26,7 @@ export default class Integration extends NoDeltaBatchIntegrationFlow {
      *
      * The implementation of this method is mandatory
      */
-    return [
-      {
-        fieldName: 'key_field',
-        fieldLabel: 'Key field',
-        fieldType: 'TEXT',
-      },
-      {
-        fieldName: 'regular_field',
-        fieldLabel: 'Regular field',
-        fieldType: 'TEXT',
-      },
-    ];
+    return metadata;
   }
 
   async loadSourceSystemData(payload?: any): Promise<IntegrationModel[]> {

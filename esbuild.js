@@ -28,6 +28,9 @@ switch (tunnelhubConfig.configuration.runtime) {
   case 'nodejs18.x':
     targetNodeVersion = 'node18';
     break;
+  case 'nodejs20.x':
+    targetNodeVersion = 'node20';
+    break;
 }
 
 require('esbuild').build({
@@ -45,8 +48,10 @@ require('esbuild').build({
         from: [
           './tunnelhub.yml',
           './package.json',
+          './yarn.lock',
+          './Dockerfile',
         ],
-        to: ['./build'],
+        to: [''],
       },
     }),
   ],
@@ -54,6 +59,11 @@ require('esbuild').build({
   if (result.errors.length === 0) {
     const inPath = path.join(__dirname, 'build/');
     const outPath = path.join(__dirname, 'dist', 'artifact.zip');
+
+    if (!fs.existsSync(path.join(__dirname, 'dist'))) {
+      fs.mkdirSync(path.join(__dirname, 'dist'));
+    }
+
     zip.zipSync(inPath, outPath, false);
   }
 }).catch(() => process.exit(1));

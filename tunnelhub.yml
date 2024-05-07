@@ -9,13 +9,5 @@ configuration:
   runtimeEngine: LAMBDA
   entrypoint: index.handler
   runtime: nodejs18.x
-  memorySize: 256
+  memorySize: 512
   timeout: 30
-#
-# Use this if is required run on VPC
-#
-# vpcConfig:
-#   subnetIds:
-#     - subnet-xxxxxxxxxxxxxxxxx
-#   securityGroupIds:
-#     - sg-xxxxxxxxxxxxxxxxx
