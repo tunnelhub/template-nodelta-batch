@@ -30,6 +30,6 @@
     "typescript": "^5.0.0"
   },
   "dependencies": {
-    "@tunnelhub/sdk": "^1.3.4"
+    "@tunnelhub/sdk": "^1.3.5"
   }
 }

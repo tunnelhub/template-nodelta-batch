@@ -1,7 +1,7 @@
 import { NoDeltaBatchIntegrationFlow } from '@tunnelhub/sdk/src/classes/flows/noDeltaBatchIntegrationFlow';
 import { GenericParameter, IntegrationMessageReturnBatch, Metadata } from '@tunnelhub/sdk';
 import { TunnelHubSystem } from '@tunnelhub/sdk/src/types/data';
-import { IntegrationModel } from '../data';
+import { IntegrationModel } from '../types';
 import metadata from '../metadata';
 
 export default class Integration extends NoDeltaBatchIntegrationFlow {
